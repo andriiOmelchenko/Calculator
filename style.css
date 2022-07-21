@@ -2,67 +2,89 @@
 body { 
    margin: 0;
    padding: 0;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
 }
 
+button {
+   font-family: Lato;
+   cursor: pointer;
+   border: none;
+}
+
+
 .calculator {
    display: grid;
-   justify-content: center;
-   align-content: center;
-   min-height: 100vh;
-   grid-template-columns: repeat(4, 100px);
    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+   grid-template-columns: repeat(4, 100px);
+   font-family: Lato;
 }
 
-.calculator__button {
-   cursor: pointer;
-   font-size: 2rem;
-   border: none;
-   outline: none;
-   background-color: #896e69;
-   font-family: 'Lato', sans-serif;
-   font-weight: 300;
-}
 
-button[data-number]:not([data-number="."]) {
-   color: #f9f9ff;
-}
-.calculator__button:hover {
-    opacity: .9;
-}
+/* ----------------  DISPLAY ------------------------------- */
 
-.accent {
-   background-color: #ffa577;
-   /* text-shadow: 3px 4px 7px rgba(0, 0, 0, .7); */
-}
-.accent:hover {
-   opacity: .8;
-}
+
 
 .calculator__output {
-   grid-column: 1 / -1;
-   background-color: #896e69;
    color: #f7f7f7;
-   font-family: 'Lato', sans-serif;
-   font-weight: 400;
+   background-color: rgba(48, 51, 46, 1);
+   grid-column: 1 / -1;
    display: flex;
    flex-direction: column;
-   align-items: flex-end;
    justify-content: space-around;
+   align-items: flex-end;
    padding: 10px;
+   font-size: 30px;
    word-wrap: break-word;
    word-break: break-all;
 }
 
-.calculator__previous-operand {
-   color: rgba(255, 255, 255, .7);
-   font-size: 1.5rem;
-}
-.calculator__current-operand {
-   font-size: 2.5rem
+.calculator__output [data-previous-operand] {
+   font-size: 18px;
+   color: rgba(247, 247, 247, .7)
 }
 
-.span-two {
+/* ----------------  OPERATIONS ----------------------------- */
+
+
+
+button[data-operation] {
+   background-color: #f68e5f;
+   color: #30332e;
+   font-size: 30px;
+   font-weight: 700;
+   
+}
+
+button[data-operation]:hover {
+   background-color: rgba(246, 142, 95, .9)
+
+}
+
+button[data-operation="AC"] {
    grid-column: span 2;
 }
+
+button[data-operation="="] {
+   grid-column: span 2;
+}
+
+
+
+/* ----------------  NUMBERS ------------------------------- */
+
+
+
+button[data-number] {
+   background-color: rgba(48, 51, 46, 1);
+   color: #f7f7f7;
+   font-size: 20px;
+}
+button[data-number]:hover {
+   background-color: rgba(48, 51, 46, .9);
+}
+
 
