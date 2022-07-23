@@ -13,8 +13,7 @@
 }
 
 button {
-   font-family: Lato;
-   cursor: pointer;
+   font-family: inherit;
    border: none;
 }
 
